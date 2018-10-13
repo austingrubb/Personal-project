@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
-import camera from '../../camera.png'
+import camera from '../../media/camera.png'
 
 export default function Nav(){
     return(
-        <div>
-                <div className="navBar">
-                    <div>
+        <div className="navBar">
+                <div className="navBar-container">
+                    <div className="logo-container">
                         <p className="Home"></p>
                          <Link to="/">
                             <img className='camera-logo' src={camera}/>

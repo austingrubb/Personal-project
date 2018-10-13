@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import './About.css';
-import frontYard from '../../front-yard.jpg';
+import frontYard from '../../media/front-yard.jpg';
 
 
 

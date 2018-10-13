@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import './Portfolio.css';
-import fish from '../../fish.jpg'
+import fish from '../../media/fish.jpg'
 import Gallery from 'react-photo-gallery';
 
 const PHOTO_SET = [

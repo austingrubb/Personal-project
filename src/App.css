@@ -1,0 +1,95 @@
+.about {
+  background-color: #410758;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 40px; */ }
+
+.frontYard {
+  height: 400px;
+  width: 500px;
+  /* padding: 40px; */ }
+
+.about-me {
+  padding: 20px 80px 10px 180px;
+  background-color: #fed136; }
+
+.front {
+  padding: 10px 140px 40px 20px;
+  background-color: blue; }
+
+.contact {
+  background-color: brown; }
+
+input[type=text], select, textarea {
+  width: 100%;
+  /* Full width */
+  padding: 12px;
+  /* Some padding */
+  border: 1px solid #ccc;
+  /* Gray border */
+  border-radius: 4px;
+  /* Rounded borders */
+  box-sizing: border-box;
+  /* Make sure that padding and width stays in place */
+  margin-top: 6px;
+  /* Add a top margin */
+  margin-bottom: 16px;
+  /* Bottom margin */
+  resize: vertical; }
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; }
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049; }
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px; }
+
+.carousel {
+  width: 800px;
+  margin-top: 90px; }
+
+.navBar-container {
+  background: #410758;
+  height: 100px;
+  color: #fed136;
+  width: 100%; }
+
+.navBar-container > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000;
+  margin: 0 auto;
+  width: 100%; }
+
+.logo-container {
+  width: 70px; }
+
+.camera-logo {
+  height: 70px;
+  width: 70px; }
+
+.home {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.portfolio {
+  background-color: plum; }
+
+.profile {
+  background-color: blueviolet; }
