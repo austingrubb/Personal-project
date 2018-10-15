@@ -2,24 +2,20 @@
     background-color: rgb(65, 7, 88);
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;  
+    flex-direction: column;  
     
-    /* padding: 40px; */
-}
-
-
-.frontYard{
-    height: 400px;
-    width: 500px;
-    /* padding: 40px; */
 }
 
 .about-me{
     padding: 20px 80px 10px 180px;
     background-color: #fed136;
 }
+.about .thankYou{
+    padding: 20px 80px 10px 180px;
+    background-color: #fed136;
+}
 
-.front{
-    padding:  10px 140px 40px 20px;
-    background-color: blue;
+.self-photo{
+    width: 200px;
 }

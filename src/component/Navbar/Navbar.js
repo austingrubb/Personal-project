@@ -7,12 +7,12 @@ export default function Nav(){
         <div className="navBar">
                 <div className="navBar-container">
                     <div className="logo-container">
+                    </div>
+                    <div>
                         <p className="Home"></p>
                          <Link to="/">
                             <img className='camera-logo' src={camera}/>
                         </Link>
-                    </div>
-                    <div>
                         <p className="Portfolio"></p>
                         <Link to="/Portfolio">
                             <button>Portfolio</button>
@@ -20,10 +20,6 @@ export default function Nav(){
                         <p className="Profile"></p>
                         <Link to="/Profile">
                             <button>Profile</button>
-                        </Link>
-                        <p className="About"></p>
-                        <Link to="/About">
-                            <button>About</button>
                         </Link>
                         <p className="Contact"></p>
                         <Link to="/Contact">

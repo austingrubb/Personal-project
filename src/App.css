@@ -3,20 +3,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 40px; */ }
-
-.frontYard {
-  height: 400px;
-  width: 500px;
-  /* padding: 40px; */ }
+  flex-direction: column; }
 
 .about-me {
   padding: 20px 80px 10px 180px;
   background-color: #fed136; }
 
-.front {
-  padding: 10px 140px 40px 20px;
-  background-color: blue; }
+.about .thankYou {
+  padding: 20px 80px 10px 180px;
+  background-color: #fed136; }
+
+.self-photo {
+  width: 200px; }
 
 .contact {
   background-color: brown; }
@@ -74,7 +72,8 @@ input[type=submit]:hover {
   align-items: center;
   max-width: 1000;
   margin: 0 auto;
-  width: 100%; }
+  width: 100%;
+  padding: 5px; }
 
 .logo-container {
   width: 70px; }

@@ -1,15 +1,30 @@
 import React, {Component} from 'react';
-import fish from '../../media/fish.jpg'
+
 import Gallery from 'react-photo-gallery';
 
-const PHOTO_SET = [
+const photoSet = [
     {
-      src: fish,
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539629819/test_8.jpg',
       width: 5,
       height: 3
     },
     {
-      src: 'https://www.cesarsway.com/sites/newcesarsway/files/styles/large_article_preview/public/Common-dog-behaviors-explained.jpg?itok=FSzwbBoi',
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539629819/test_6.jpg',
+      width: 5,
+      height: 3
+    },
+    {
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539629819/test_9.jpg',
+      width: 5,
+      height: 3
+    },
+    {
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539629819/test_7.jpg',
+      width: 5,
+      height: 3
+    },
+    {
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539629819/test_10.jpg',
       width: 5,
       height: 3
     }
@@ -17,10 +32,9 @@ const PHOTO_SET = [
 
 class Portfolio extends Component {
     render(){   
-        console.log(fish)
         return(
             <div className = "portfolio">
-                <Gallery photos={PHOTO_SET} columns={3}/>
+                <Gallery photos={photoSet} columns={3}/>
             </div>
         )
     }
