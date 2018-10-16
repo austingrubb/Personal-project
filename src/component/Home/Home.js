@@ -37,7 +37,7 @@ class Home extends Component {
         return(
             <div>
                 <div className = "home">
-                    <Carousel showThumbs={false} centerMode={true} infiniteLoop={true} dynamicHeight={true} className='carousel' swipeable={true} width='600px'>
+                    {/* <Carousel showThumbs={false} centerMode={true} infiniteLoop={true} dynamicHeight={true} className='carousel' swipeable={true} width='600px'>
                         <div className = "honey" >
                         <img src='https://res.cloudinary.com/alexishandphotography/image/upload/v1539624727/test_photo_one.jpg' />
                             <p className="legend">Legend 1</p>
@@ -54,7 +54,7 @@ class Home extends Component {
                         <img src='https://res.cloudinary.com/alexishandphotography/image/upload/v1539624727/images.jpg' />
                             <p className="legend">Legend 4</p>
                         </div>
-                    </Carousel>
+                    </Carousel> */}
                 </div>
                 <div className = "photoPreview">
                     <Gallery photos={photoPreview} columns={3}/>

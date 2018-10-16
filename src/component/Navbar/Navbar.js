@@ -1,32 +1,51 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import camera from '../../media/camera.png'
+import React, {Component} from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import logo from '../../media/logo.png'
 
-export default function Nav(){
-    return(
-        <div className="navBar">
+export default class Nav extends Component{
+    state = {
+        toggle: false
+    }
+
+    toggleFunc = () => {
+        this.setState((prevState) => {
+            return {
+                toggle: !prevState.toggle
+            }
+        })
+    }
+    render(){
+        return(
+            <div className="navBar">
                 <div className="navBar-container">
                     <div className="logo-container">
-                    </div>
-                    <div>
-                        <p className="Home"></p>
                          <Link to="/">
-                            <img className='camera-logo' src={camera}/>
+                            <img className='camera-logo' src={logo}/>
                         </Link>
-                        <p className="Portfolio"></p>
-                        <Link to="/Portfolio">
-                            <button>Portfolio</button>
-                        </Link>
-                        <p className="Profile"></p>
-                        <Link to="/Profile">
-                            <button>Profile</button>
-                        </Link>
-                        <p className="Contact"></p>
-                        <Link to="/Contact">
-                            <button>Contact</button>
-                        </Link> 
+                    </div>
+
+                    <div onClick={this.toggleFunc}className='mobileToggle'>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div className={this.state.toggle ? "link-container" : "link-container hide" }>
+                        <NavLink to="/">
+                            Home
+                        </NavLink>
+                        <NavLink to="/Portfolio">
+                            Portfolio
+                        </NavLink>
+                        <NavLink to="/Profile">
+                            Profile
+                        </NavLink>
+                        <NavLink to="/Contact">
+                            Contact
+                        </NavLink> 
                     </div>
                 </div>
         </div>
     )
- }
+}
+}

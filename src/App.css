@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 .about {
   background-color: #410758;
   display: flex;
@@ -59,36 +60,96 @@ input[type=submit]:hover {
   width: 800px;
   margin-top: 90px; }
 
-.navBar-container {
-  background: #410758;
-  height: 100px;
-  color: #fed136;
-  width: 100%; }
+.navBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white; }
 
-.navBar-container > div {
+.navBar-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  max-width: 1000;
+  padding: 0 25px;
   margin: 0 auto;
   width: 100%;
-  padding: 5px; }
-
-.logo-container {
-  width: 70px; }
+  height: 100px; }
+  .navBar-container .mobileToggle {
+    display: none; }
+  @media (max-width: 991px) {
+    .navBar-container .link-container {
+      background: white;
+      box-shadow: -2px 3px 5px rgba(0, 0, 0, 0.397);
+      height: 100vh;
+      width: 300px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 100px;
+      transform: translate(0px, 0px);
+      transition: .3s; }
+      .navBar-container .link-container > a {
+        margin: 10px 0; } }
+  @media (max-width: 991px) {
+    .navBar-container .mobileToggle {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 40px;
+      width: 40px;
+      z-index: 10;
+      background-color: white;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.397);
+      border-radius: 5px;
+      padding: 8px; }
+      .navBar-container .mobileToggle span {
+        border-bottom: 2px solid black;
+        width: 100%; }
+    .navBar-container .hide {
+      transform: translate(300px, 0px); } }
 
 .camera-logo {
-  height: 70px;
-  width: 70px; }
+  height: 99%; }
 
 .home {
   display: flex;
   justify-content: space-around;
   align-items: center; }
 
+.link-container {
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-family: 'lato';
+  align-items: center;
+  font-size: 22px;
+  font-weight: 400;
+  color: lightblue; }
+  .link-container a:visited {
+    color: grey; }
+  .link-container a:hover {
+    color: lightblue; }
+  .link-container a:active {
+    color: darkblue; }
+
+.link-container a {
+  text-decoration: none; }
+
 .portfolio {
   background-color: plum; }
 
 .profile {
   background-color: blueviolet; }
+
+.site-content-container {
+  padding-top: 100px; }

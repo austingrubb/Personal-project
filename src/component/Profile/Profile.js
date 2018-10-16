@@ -7,7 +7,7 @@ class Profile extends Component {
             <div className = "profile">
                 you are on the Profile page
                 <div>
-                    <Login/>>
+                    {/* <Login/> */}
                 </div>
             </div>
         )

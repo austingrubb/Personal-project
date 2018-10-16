@@ -5,16 +5,6 @@ drop table if exists photos cascade;
 drop table if exists admin cascade;
 
 
-
-create table users(
-id serial primary key NOT NULL unique,
-name text,
-password text unique,
-email text unique NOT NULL
-);
-
-
-
 create table admin(
 id serial primary key NOT NULL unique,
 name text NOT NULL,
@@ -22,6 +12,12 @@ password text unique,
 email text unique NOT NULL
 );
 
+create table users(
+id serial primary key NOT NULL unique,
+name text,
+password text unique,
+email text unique NOT NULL
+);
 
 
 create table photos(

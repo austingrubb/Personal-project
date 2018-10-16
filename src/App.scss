@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
 @import './component/About/About.scss';
 
 @import './component/Admin/Admin.scss';
@@ -13,3 +15,7 @@
 @import './component/Portfolio/Portfolio.scss';
 
 @import './component/Profile/Profile.scss';
+
+.site-content-container{
+    padding-top: 100px;
+}
