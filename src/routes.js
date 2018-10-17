@@ -5,6 +5,7 @@ import Admin from './component/Admin/Admin';
 import Contact from './component/Contact/Contact';
 import Profile from './component/Profile/Profile';
 import Portfolio from './component/Portfolio/Portfolio';
+import About from './component/About/About';
 
 
 export default function routes(){
@@ -13,6 +14,7 @@ export default function routes(){
         <Route path= '/Admin' component={Admin}/>
         <Route path='/Contact' component={Contact}/>
         <Route path='/Profile' component={Profile}/>
+        <Route path='/About' component={About}/>
         <Route path='/Portfolio' component={Portfolio}/>
     </Switch>
 }

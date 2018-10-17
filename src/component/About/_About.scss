@@ -1,21 +1,29 @@
 .about{
-    background-color: rgb(65, 7, 88);
+    // background-color: rgb(65, 7, 88);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;  
-    flex-direction: column;  
+    flex-direction: row;  
     
 }
 
 .about-me{
-    padding: 20px 80px 10px 180px;
-    background-color: #fed136;
+    float: right;
+    padding: 30px 180px;
+    font-family: 'Source Sans Pro', sans-serif; 
+    font-size: 20px;
 }
 .about .thankYou{
-    padding: 20px 80px 10px 180px;
-    background-color: #fed136;
+    float: right;
+    padding: 30px 80px;
+    font-family: 'Source Sans Pro', sans-serif; 
+    font-size: 20px;
 }
 
+
 .self-photo{
-    width: 200px;
+    width: 500px;
+    float: left;
+    justify-content: space-around;
+    margin: 80px 80px 80px 180px;
 }
