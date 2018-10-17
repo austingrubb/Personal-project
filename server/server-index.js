@@ -1,5 +1,5 @@
 const express = require('express');
-const c = require('./server-controller');
+const uC = require('./server-controller');
 const bodyParser = require('body-parser');
 const massive = require('massive');
 const session = require('express-session');
@@ -80,7 +80,14 @@ app.get('/data', checkIfLoggedIn, (req, res) => {
     res.json({ data: "congrats you logged in" });
 })
 
-
+app.get('/api/users', uC.getUsers)
+app.get('/api/photos', uC.getPhotos)
+app.get('/api/admin', uC.getAdmin)
+app.get('/api/usersPhotos', uC.getUsersPhotos)
+app.post('/api/addUsers', uC.createUser)
+app.post('/api/addPhotos', uC.addPhotos)
+app.delete('/api/deleteUser/:id', uC.deleteUser)
+app.delete('/api/deletePhotos/:id', uC.deletePhotos)
 
 
 const PORT = 4800;
