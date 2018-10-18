@@ -6,8 +6,13 @@ class Contact extends Component {
     constructor(){
         super()
         this.state = {
+            name: '',
+            email: '',
+            moment: ''
 
         }
+        
+    this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(key, value){
@@ -18,6 +23,14 @@ class Contact extends Component {
 
     handleSubmit(event){
         alert('The email was submitted thank you ' + this.state.name);
+        const formData = {
+            name: this.state.name,
+            email: this.state.email,
+            moment: this.state.moment
+        }
+        axios.post('/api/sendEmail', formData).then((res) => {
+            console.log(res.data)
+        })
         event.preventDefault();
     }
 
@@ -44,7 +57,7 @@ class Contact extends Component {
                     <label for = "reason">Your Moment</label>
                     <input type = "text" value={this.state.moment} onChange={e => this.handleChange('moment', e.target.value)} placeholder = "What moment would you like me to capture?"/>
                 </div>
-                <button>Submit</button>
+                <button type="submit" value="Submit" onClick={(e) => this.handleSubmit(e)}>Submit</button>
             </div>
         )
     }
