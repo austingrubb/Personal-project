@@ -1,35 +1,87 @@
 .contact{
-    background-color: brown
+    height: 100%;
+}
+
+.inputContainerBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 370px;
+    width: 100%;
+    flex-direction: column;
+    padding-bottom: 50px;
+    // padding: 0 20px;
+    
+}
+
+.thankYouBox{
+    font-size: 1.3em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    p{
+        max-width: 1000px;
+        padding: 20px
+    }
+}
+
+.submit{
+    max-width: 200px;
+}
+.headerContact{
+    color: whitesmoke;
+    height: 300px;
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    padding: 20px;
+    background-image: url(https://res.cloudinary.com/alexishandphotography/image/upload/v1539801322/466daac5711debc45d91e864f63a1d82.jpg)
+}
+
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 input[type=text], select, textarea {
-    width: 100%; /* Full width */
+    width: 100%; 
+    max-width: 520px;
     padding: 12px; /* Some padding */  
     border: 1px solid #ccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
+    border-radius: 5px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
     margin-top: 6px; /* Add a top margin */
     margin-bottom: 16px; /* Bottom margin */
-    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
 }
 
 /* Style the submit button with a specific background color etc */
-input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* When moving the mouse over the submit button, add a darker green color */
-input[type=submit]:hover {
-    background-color: #45a049;
-}
 
 /* Add a background color and some padding around the form */
 .container {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+}
+
+button[type=submit] {
+    background-color: rgb(76, 172, 175);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 20px; 
+}
+
+button[type=submit]:hover {
+    background-color: #4592a0;
+}
+
+.stock-photo{
+    max-width: 500px;
 }

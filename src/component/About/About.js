@@ -4,8 +4,8 @@ class About extends Component {
     render(){   
         return(
             <div className = "about">
-               <div>
-                    <img className='self-photo' src='https://res.cloudinary.com/alexishandphotography/image/upload/v1539635553/a1-22.jpg'/>
+               <div className = "headerAbout">
+                      Just A Little Bit About Myself
                </div>
                <div className = "about-me">
                     <p>
@@ -13,11 +13,11 @@ class About extends Component {
 
 
                     </p>
+               <div>
+                    <img className='self-photo' src='https://res.cloudinary.com/alexishandphotography/image/upload/v1539635553/a1-22.jpg'/>
+               </div>
                     <p>
                     Outside of photography I can be found riding horses, hiking, or enjoying the stars. I love listening to music some country music and old rock n' roll they tend to be my go to jams. A little secret about me I absolutely love film scores and could listen to them all day long. please take the time to look at my portfolio or blog. 
-                    </p>
-                    <p>
-                    I appreciate that you took the time to look around and consider me as your potential photographer and would love to get the chance to speak with you. Please contact me with any of your questions or concerns and if you would like to set up a session. This is about YOU and I want to make sure to capture every moment exactly how you want to remember it.
                     </p>
                </div>
             </div>

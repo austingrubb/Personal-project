@@ -1,11 +1,42 @@
 .home {
-    height: 800px;
-    overflow: hidden;
+    max-height: 780px;
+    // height: 780px;
+    min-height: 600px;
+    // min-width: 800px;
+
+    overflow-y: scroll;
+    // overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    background: rgb(245, 245, 245); 
+
+    .mobileView{
+        display: none;
+    }
     .carousel{
+        // overflow-y: scroll;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         z-index: 1;
+    }
+    @media (max-width: 991px){
+        .carousel{
+            display: none;
+        }
+        .mobileView{
+            display: flex;
+            transition: 0ms;
+            // overflow-y: scroll;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 100vw;
+            img {
+                width: 100%;
+            }
+        }
     }
 }
 

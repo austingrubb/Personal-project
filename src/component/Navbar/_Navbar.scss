@@ -1,10 +1,11 @@
 .navBar{
     // position: fixed;
-    top: 0;
+    top: 20px;
     left: 0;
     right: 0;
     background: white;
     z-index: 2;
+    
 }
 .navBar-container{
     display: flex;
@@ -62,6 +63,7 @@
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.397);
             border-radius: 5px;
             padding: 8px;
+            
             span {
                 border-bottom: 2px solid black;
                 width: 100%;
@@ -70,6 +72,8 @@
 
         .hide{
             transform: translate(300px ,0px);
+            width: 0;
+            overflow: hidden;
         }
     }
 }
@@ -78,14 +82,11 @@
 .camera-logo{
     height: 99%;
     // padding: 0px 740px 0px 0px;
+    
 
 }
 
-.home{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
+
 
 .link-container{
     max-width: 450px;
@@ -104,7 +105,7 @@
         color: lightblue;
     }
     a:active{ 
-        color: darkblue
+        color: rgb(87, 172, 228)
     }
 }
 

@@ -8,7 +8,6 @@ require('dotenv').config();
 // const path = require('path')
 // const saltRounds = 12
 const nodemailer = require('nodemailer');
-// const  logo = require ('../../media/logo.png')
 
 const app = express();
 app.use(bodyParser.json());
@@ -28,8 +27,8 @@ app.use(session({
 }))
 
 app.post('/api/sendEmail', (req, res, next) => {
-    const {name, email, moment} = req.body;
-    console.log(name, email, moment)
+    const {name, email, moment, hearAbout} = req.body;
+    console.log(name, email, moment, hearAbout)
     //do email logic ,
     var transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -49,11 +48,22 @@ app.post('/api/sendEmail', (req, res, next) => {
             <div>
             <div style='background-color: white; padding:10px; width:320px; margin: 0 auto; border-radius:3px;'>
                 <h1 style='color: #777777'></h1>
-                <p style>this.state</p>
+                <p style>
+                ${name}
+                </p>
+                <p style> 
+                ${email}
+                </p>
+                <p style>
+                ${moment}
+                </p>
+                <p style>
+                ${hearAbout}
+                </p>
             </div>
         <body>`// plain text body
       };
-
+console.log(name,email,moment)
     transporter.sendMail(mailOptions, function (err, info) {
         if(err){
           console.log(err)
@@ -64,7 +74,7 @@ app.post('/api/sendEmail', (req, res, next) => {
 })
 
 
-app.get('/api/users', uC.getUsers)
+app.get('/api/users', uC.getUsers) 
 app.get('/api/photos', uC.getPhotos)
 app.get('/api/admin', uC.getAdmin)
 app.get('/api/usersPhotos', uC.getUsersPhotos)

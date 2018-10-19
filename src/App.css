@@ -4,13 +4,20 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-direction: row; }
+  flex-direction: column; }
 
 .about-me {
-  float: right;
-  padding: 30px 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 20px; }
+  font-size: 20px;
+  padding: 30px; }
+  .about-me p {
+    padding-bottom: 15px;
+    padding-top: 15px; }
 
 .about .thankYou {
   float: right;
@@ -19,22 +26,71 @@
   font-size: 20px; }
 
 .self-photo {
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   float: left;
   justify-content: space-around;
-  margin: 80px 80px 80px 180px; }
+  margin: auto; }
+
+.headerAbout {
+  color: black;
+  font-size: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Nunito', sans-serif;
+  padding: 0 30px 0 30px; }
 
 .contact {
-  background-color: brown; }
+  height: 100%; }
+
+.inputContainerBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 370px;
+  width: 100%;
+  flex-direction: column;
+  padding-bottom: 50px; }
+
+.thankYouBox {
+  font-size: 1.3em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center; }
+  .thankYouBox p {
+    max-width: 1000px;
+    padding: 20px; }
+
+.submit {
+  max-width: 200px; }
+
+.headerContact {
+  color: whitesmoke;
+  height: 300px;
+  font-size: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Nunito', sans-serif;
+  padding: 20px;
+  background-image: url(https://res.cloudinary.com/alexishandphotography/image/upload/v1539801322/466daac5711debc45d91e864f63a1d82.jpg); }
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%; }
 
 input[type=text], select, textarea {
   width: 100%;
-  /* Full width */
+  max-width: 520px;
   padding: 12px;
   /* Some padding */
   border: 1px solid #ccc;
   /* Gray border */
-  border-radius: 4px;
+  border-radius: 5px;
   /* Rounded borders */
   box-sizing: border-box;
   /* Make sure that padding and width stays in place */
@@ -42,38 +98,61 @@ input[type=text], select, textarea {
   /* Add a top margin */
   margin-bottom: 16px;
   /* Bottom margin */
-  resize: vertical; }
+  resize: vertical;
+  /* Allow the user to vertically resize the textarea (not horizontally) */ }
 
 /* Style the submit button with a specific background color etc */
-input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer; }
-
-/* When moving the mouse over the submit button, add a darker green color */
-input[type=submit]:hover {
-  background-color: #45a049; }
-
 /* Add a background color and some padding around the form */
 .container {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px; }
 
+button[type=submit] {
+  background-color: #4cacaf;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 20px; }
+
+button[type=submit]:hover {
+  background-color: #4592a0; }
+
+.stock-photo {
+  max-width: 500px; }
+
 .home {
-  height: 800px;
-  overflow: hidden; }
+  max-height: 780px;
+  min-height: 600px;
+  overflow-y: scroll;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  background: whitesmoke; }
+  .home .mobileView {
+    display: none; }
   .home .carousel {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     z-index: 1; }
+  @media (max-width: 991px) {
+    .home .carousel {
+      display: none; }
+    .home .mobileView {
+      display: flex;
+      transition: 0ms;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 100vw; }
+      .home .mobileView img {
+        width: 100%; } }
 
 .navBar {
-  top: 0;
+  top: 20px;
   left: 0;
   right: 0;
   background: white;
@@ -128,15 +207,12 @@ input[type=submit]:hover {
         border-bottom: 2px solid black;
         width: 100%; }
     .navBar-container .hide {
-      transform: translate(300px, 0px); } }
+      transform: translate(300px, 0px);
+      width: 0;
+      overflow: hidden; } }
 
 .camera-logo {
   height: 99%; }
-
-.home {
-  display: flex;
-  justify-content: space-around;
-  align-items: center; }
 
 .link-container {
   max-width: 450px;
@@ -153,28 +229,50 @@ input[type=submit]:hover {
   .link-container a:hover {
     color: lightblue; }
   .link-container a:active {
-    color: darkblue; }
+    color: #57ace4; }
 
 .link-container a {
   text-decoration: none; }
+
+.portfolio {
+  padding-bottom: 4em;
+  background: whitesmoke; }
 
 .profile {
   background-color: blueviolet; }
 
 .instaLogo {
-  padding: 0px 0px 0px 28px;
-  margin: 20px 35px;
-  height: 40px; }
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center; }
 
 .faceLogo {
-  margin: 20px 40px;
-  height: 40px; }
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center; }
 
 .builtBy {
   display: flex;
-  float: right;
-  padding: 34px 85px 0px 0px;
   justify-content: space-around;
+  align-content: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: lightblue;
   font-size: 130%; }
+
+.footer {
+  background: whitesmoke;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.socialMedia {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  width: 5%;
+  margin: 0 auto 5px; }
