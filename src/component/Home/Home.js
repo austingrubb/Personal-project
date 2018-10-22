@@ -1,32 +1,7 @@
 import React, {Component} from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-// import About from '../About/About'
 
-// import Gallery from 'react-photo-gallery';
-
-// const photoSet = [
-//     {
-//       src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539801321/high-quality-tiger-images.jpg',
-//       width: 5,
-//       height: 3
-//     },
-//     {
-//       src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539801321/Tigers_Snow_Cute_544989_1920x1200.jpg',
-//       width: 5,
-//       height: 3
-//     },
-//     {
-//       src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539801321/maxresdefault.jpg',
-//       width: 5,
-//       height: 3
-//     },
-//     {
-//       src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539801322/Free-places-to-download-stock-photos-1600x806.jpg',
-//       width: 5,
-//       height: 3
-//     }
-//   ];
 
 class Home extends Component {
     render(){   

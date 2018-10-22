@@ -1,4 +1,25 @@
 .portfolio{
-    padding-bottom: 4em;
+    // padding-bottom: 4em;
     background: rgb(245, 245, 245);
+
+    .mobileViewP{
+        display: none;
+    }
+    @media (max-width: 991px){
+        .gallery{
+            display: none;
+        }
+        .mobileViewP{
+            display: flex;
+            transition: 0ms;
+            // overflow-y: scroll;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 100vw;
+            img {
+                width: 100%;
+            }
+        }
+    }
 }

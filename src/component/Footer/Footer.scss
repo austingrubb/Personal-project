@@ -25,6 +25,7 @@
     font-size: 130%;
 }
 
+
 .footer{
     background: rgb(245, 245, 245);
     display: flex;
@@ -42,4 +43,14 @@
     width: 5%;
     margin: 0 auto 5px;
     
+}
+
+.footerQuote{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin: 0 auto 5px;
+    font-family: 'Charmonman', cursive;
+    font-size: 2em;
+    padding: 10px; 
 }

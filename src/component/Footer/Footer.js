@@ -4,6 +4,7 @@ export class Footer extends Component {
   render() {
     return (
       <div className="footer">
+      <h1 className="footerQuote">Capturing Moments So They Last A Life Time!</h1>
         <div className="socialMedia">
           <a href='https://www.instagram.com/austin.grubb.1995/'>
           <img className='instaLogo' src={`https://res.cloudinary.com/alexishandphotography/image/upload/v1539812892/39772.png`}/>
@@ -19,5 +20,6 @@ export class Footer extends Component {
     )
   }
 }
+
 
 export default Footer

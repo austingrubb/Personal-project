@@ -79,7 +79,12 @@ class Portfolio extends Component {
     render(){   
         return(
             <div className = "portfolio">
+            <div className = "gallery">
                 <Gallery photos={photoSet} columns={3}/>
+            </div>
+                <div className="mobileViewP">
+                  <Gallery photos={photoSet} columns={1}/>
+                </div>
             </div>
         )
     }

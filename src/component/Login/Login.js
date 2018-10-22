@@ -8,7 +8,9 @@ class Login extends Component {
     state = {
       showRegister: false,
       message: null,
-      user: this.props.user
+      user: this.props.user,
+      admin: false
+      
     };
   
     getMessage = error => error.response
@@ -21,11 +23,14 @@ class Login extends Component {
       this.setState({message: null})
       const username = this.refs.username.value;
       const password = this.refs.password.value;
+      const email = this.refs.email.value;
       axios.post('/signup' , {
         username,
-        password
+        password,
+        email
       }).then(response => {
-        this.props.addUser({users: response.data}, this.props.history.push('/customers'))
+        this.props.logIn(response.data)
+        this.setState({users: response.data}, this.props.history.push('/Profile'))
       }).catch(error => {
         this.setState({ message: 'Something went wrong: ' + this.getMessage(error) });
       }); 
@@ -39,8 +44,8 @@ class Login extends Component {
         username,
         password
       }).then(response => {
-        this.props.addUser(response.data)
-        this.setState({users: response.data}, this.props.history.push('/customers'))
+        this.props.logIn(response.data)
+        this.setState({users: response.data}, this.props.history.push('/Profile'))
       }).catch(error => {
         this.setState({ message: 'Something went wrong: ' + this.getMessage(error) });
       });
@@ -65,7 +70,15 @@ class Login extends Component {
       console.log('current logged in user', this.state.user)
       const { showRegister, message} = this.state;
       const userData = JSON.stringify(users, null, 2)
-      const inputFields = <div>
+      const signUpInputFields = <div>
+        Username: <input ref="username" />
+        {' '}
+        Password: <input type="password" ref="password" />
+        {' '}
+        Email: <input type="email" ref="email" />
+        {' '}
+        </div>
+      const loginInputFields = <div>
         Username: <input ref="username" />
         {' '}
         Password: <input type="password" ref="password" />
@@ -85,12 +98,12 @@ class Login extends Component {
               <div className="login-or-register">
                 {showRegister && <div>
                   <h2>sign up</h2>
-                  {inputFields}
+                  {signUpInputFields}
                   <button onClick={this.signup}>sign up</button>
                 </div>}
                 {!showRegister && <div>
                   <h2>Log in</h2>
-                  {inputFields}
+                  {loginInputFields}
                   <button onClick={this.login}>Log in</button>
                 </div>}
                 {message}

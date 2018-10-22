@@ -5,9 +5,8 @@ class Profile extends Component {
     render(){   
         return(
             <div className = "profile">
-                you are on the Profile page
                 <div>
-                    {/* <Login/> */}
+                    <Login/>
                 </div>
             </div>
         )
@@ -15,4 +14,3 @@ class Profile extends Component {
 }
 
 export default Profile;
-
