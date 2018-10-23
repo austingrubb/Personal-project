@@ -48,7 +48,8 @@ app.post('/login', (req, res) => {
         if (users.length) {
             bcrypt.compare(password, users[0].password).then(passwordsMatched => {
                 if (passwordsMatched) {
-                    req.session.users = { username: users[0].username };
+                    console.log("hello",users)
+                    req.session.users = { username: users[0].name };
                     res.json({ users: req.session.users });
                 } else {
                     res.status(403).json({ message: 'Wrong password' })
@@ -128,7 +129,11 @@ console.log(name,email,moment)
     // send response
 })
 
-
+app.get('/api/getLoggedInUser',(req, res) => {
+    console.log(req.session)
+    res.status(200).send(req.session.users)
+    
+})
 app.get('/api/users', uC.getUsers) 
 app.get('/api/photos', uC.getPhotos)
 app.get('/api/admin', uC.getAdmin)

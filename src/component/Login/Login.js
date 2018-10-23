@@ -64,12 +64,13 @@ class Login extends Component {
       this.props.user !== prevProps.user && this.setState({user: this.props.user})
     }
     
-  
+    // id ,name ,email
     render() {
-      const { users} = this.state.user;
+      // const { users} = this.state.user;
+      const {user} =this.props
       console.log('current logged in user', this.state.user)
       const { showRegister, message} = this.state;
-      const userData = JSON.stringify(users, null, 2)
+      const userData = JSON.stringify( this.props)
       const signUpInputFields = <div>
         Username: <input ref="username" />
         {' '}
@@ -87,7 +88,7 @@ class Login extends Component {
       return (
         <div className="App">
         <div className="App-intro">
-          {!users ? 
+          {!user ? 
            <nav className="navBar">
             <div> 
               <div className="login_signuplink">

@@ -1,8 +1,18 @@
 import React, {Component} from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import {logIn} from '../../ducks/reducer'
+import { connect } from 'react-redux';
 import logo from '../../media/logo.png'
+import axios from 'axios'
 
-export default class Nav extends Component{
+
+class Nav extends Component{
+    componentDidMount(){
+        axios.get('/api/getLoggedInUser').then(response => {
+            this.props.logIn(response.data)
+            console.log(response.data)
+        })
+    }
     state = {
         toggle: false
     }
@@ -52,3 +62,11 @@ export default class Nav extends Component{
     )
 }
 }
+
+const mapStateToProps = (store) => {
+    return{
+      user: store.users
+    }
+  }
+  
+  export default connect(mapStateToProps,{logIn})(Nav);
