@@ -1,13 +1,187 @@
 import React, {Component} from 'react';
+import UsersList from '../Admin/UsersList'
+import axios from 'axios';
+import {logIn} from '../../ducks/reducer'
+import {logOut} from '../../ducks/reducer'
+import { connect } from 'react-redux';
 
-class Admin extends Component {
-    render(){   
+export class Admin extends Component {
+    constructor(){
+        super();
+        this.state = {  
+            gallery: [],
+            username: "test1",
+            password: "test1",
+            email: "test1",
+            admin: false,
+            users: ''
+        }
+    }
+
+    componentDidMount(){
+        axios.get('/api/users').then(response => {
+            console.log(response.data)
+            this.setState({
+                users: response.data
+            })
+        })
+    }
+
+    signup = () => {
+        axios.post('/signup' ,{username: this.state.username, password: this.state.password, email: this.state.email, admin: this.state.admin})
+        .then(res => this.setState({username: "", password: "", email: "", user: ""}))
+        .catch(error => {
+        console.log('error', error);
+        })
+        console.log(this.state.username,this.state.password,this.state.email,this.state.admin)
+    }
+    
+    login = () => {
+        axios.post('/login',{username: this.state.username, password: this.state.password}).then( res => {
+            this.props.logIn(res.data)}
+        ).catch(error => {
+            console.log('error', error);
+        })
+        console.log(this.state.username,this.state.password,this.state.email,this.state.admin)
+    }
+    logOut = () => {
+        axios.post('/logout' ).then (res => {
+            this.props.logOut(res.data)
+            this.setState({
+                username: "",
+                password: ""
+            })
+            }
+        )
+        }
+
+    uploadWidget = () => {
+        window.cloudinary.openUploadWidget(
+     { cloud_name: 'alexishandphotography', upload_preset: 'main_up', folder: 'main', tags: ['TAG'] },
+          (error, result) => {
+            if (result.info.secure_url) {
+              let myGallery = [...this.state.gallery].concat(result.info.secure_url)
+              this.setState({ gallery: myGallery })
+            }
+         })
+     }
+     
+    render(){  
+        const {user} =this.props
+        const admin = this.props.user.admin
+        console.log(admin)
         return(
-            <div>
-                you are on the Admin page
-            </div>
+            <div className="Admin">
+              {!admin ?
+                <div className="login-introAdmin">
+                     <h1>LOGIN</h1>
+                        Name:
+                        <input type = "text" name ='username' onChange = {(e) => this.setState({username: e.target.value})}value = {this.state.username}/>
+                        Password:
+                        <input type = "text" password ='password' onChange = {(e) => this.setState({password: e.target.value})}value = {this.state.password}/>
+                        <button type="submit" onClick={this.login}>Login</button>
+                </div>
+                        :
+                 <div className='adminInfo'>
+                    <div>
+                    {user ?
+                    <div className="upload">
+                            <button type="submit" onClick={this.uploadWidget} className="upload-button">
+                            Add Images
+                            </button>
+                        <div className="adminSignUp">
+                            <h1>SIGNUP</h1>
+                                name:
+                                <input type = "text" name ='username' onChange = {(e) => this.setState({username: e.target.value})}value = {this.state.username}/>
+                                password:
+                                <input type = "text" password ='password' onChange = {(e) => this.setState({password: e.target.value})}value = {this.state.password}/>
+                                email:
+                                <input type = "text" email ='email' onChange = {(e) => this.setState({email: e.target.value})}value = {this.state.email}/>
+                                <button type="submit" onClick={this.signup}>signUp</button>
+                        </div>
+                        <div>
+                            <UsersList users={this.state.users}/>
+                        </div>
+                    </div>
+              :
+              'please login'
+              }
+                 <button type="submit" onClick={this.logOut}>logout</button>
+                    </div>
+                </div>
+                }     
+            </div>        
         )
     }
 }
 
-export default Admin;
+  const mapStateToProps = (store) => {
+    return{
+      user: store.users
+    }
+  }
+  
+  export default connect(mapStateToProps,{logIn, logOut})(Admin);
+
+// import React, {Component} from 'react';
+// import UsersList from '../Admin/UsersList'
+
+// class Admin extends Component {
+//     constructor(){
+//         super();
+//         this.state = {  
+//             gallery: [],
+//             toggle: false
+//         }
+//     }
+
+//     uploadWidget = () => {
+//         window.cloudinary.openUploadWidget(
+//      { cloud_name: 'alexishandphotography', upload_preset: 'main_up', folder: 'main', tags: ['TAG'] },
+//           (error, result) => {
+//             if (result.info.secure_url) {
+//               let myGallery = [...this.state.gallery].concat(result.info.secure_url)
+//               console.log(myGallery);
+     
+//               this.setState({ gallery: myGallery })
+//             }
+//          })
+//      }
+
+//      toggleFunc = () => {
+//          this.setState((prevState) => {
+//              return {
+//                  toggle: !prevState.toggle
+//              }
+//          })
+//      }
+     
+//     render(){
+//         const style1 = {
+//             position:"absolute",
+//             left: "40px"
+//         }
+
+//         const style2 = {
+//             position:"absolute",
+//             left: "140px"
+//         }
+
+//         return(
+//             <div>
+//                 you are on the Admin page
+//                 <div className="upload">
+//                     <button style={this.state.toggle ? style1 : style2} onMouseEnter={this.toggleFunc} className="upload-button">
+//                          Add Images
+//                     </button>
+//                 <div>
+//                 <UsersList/>
+//                 </div>
+//                 </div>
+                
+//             </div>
+//         )
+//     }
+// }
+
+// export default Admin;

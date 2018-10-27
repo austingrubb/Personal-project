@@ -29,11 +29,16 @@ app.use(session({
 app.post('/signup', (req, res) => {
     const db = app.get('db')
     const {username, password, email} = req.body
-    console.log(username, email, password)
     bcrypt.hash(password, saltRounds).then(hashedPassword => {
-        db.create_users([username,email, hashedPassword]).then(() => {
-            req.session.users = {username}
-            res.json({users: req.session.users})
+        db.create_users([username,email, hashedPassword]).then(users => {
+            req.session.users = {
+                username: users[0].name,
+                id: users[0].id,
+                email: users[0].email,
+                admin: users[0].admin
+            }
+            res.send(req.session.users)
+            console.log("-------------",req.session.users)
         }).catch(error => {
             console.log('error', error);
             res.status(500).json({ message: 'Something bad happened! '})
@@ -45,12 +50,17 @@ app.post('/login', (req, res) => {
     const db = app.get('db');
     const { username, password } = req.body;
     db.find_user([username]).then(users => {
-        if (users.length) {
+        if (users.length) { 
             bcrypt.compare(password, users[0].password).then(passwordsMatched => {
                 if (passwordsMatched) {
-                    console.log("hello",users)
-                    req.session.users = { username: users[0].name };
-                    res.json({ users: req.session.users });
+                    req.session.users = { 
+                        username: users[0].name,
+                        id: users[0].id,
+                        email: users[0].email,
+                        admin: users[0].admin
+                    };
+                    res.send(req.session.users);
+                    console.log("-------------",req.session.users)
                 } else {
                     res.status(403).json({ message: 'Wrong password' })
                 }
@@ -71,6 +81,7 @@ app.post('/logout', (req, res) => {
 });
 
 function checkIfLoggedIn(req, res, next){
+
     if(req.session.users){
         next()
     }else{

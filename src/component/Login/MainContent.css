@@ -1,0 +1,17 @@
+.mainContent {
+  background: #0df505; }
+  .mainContent .mobileViewMainContent {
+    display: none; }
+  @media (max-width: 991px) {
+    .mainContent .galleryMainContent {
+      display: none; }
+    .mainContent .mobileViewMainContent {
+      display: flex;
+      transition: 0ms;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 100vw; }
+      .mainContent .mobileViewMainContent img {
+        width: 100%;
+        height: 100%; } }

@@ -7,7 +7,6 @@ const LOG_OUT = "LOG_OUT"
 
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
-
         case LOG_IN:
             return {...state, users: action.payload};
 
@@ -30,3 +29,4 @@ export function logOut(){
         type: LOG_OUT,
     }
 }
+
