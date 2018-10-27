@@ -50,6 +50,7 @@ class Login extends Component {
         this.setState({ message: 'Something went wrong: ' + this.getMessage(error) });
       });
     }
+    // hello
   
     logout = () => {
       axios.post('/logout').then(response => {
