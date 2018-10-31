@@ -35,20 +35,17 @@ values('jacob', 'testpass', 'jacob5@gmail.com', false);
 insert into users(name, password, email, admin)
 values('dan', 'test3', 'dan@gmail.com', false);
 
-insert into photos(users_id, photos_id, photos_url)
-values(2, 2, 'testurl');
+insert into photos(users_id, photos_url)
+values(2, 'testurl');
 
-insert into photos(users_id, photos_id, photos_url)
-values(3, 3, 'testurl2');
+insert into photos(users_id, photos_url)
+values(3, 'testurl2');
 
-insert into photos(users_id, photos_id, photos_url)
-values(4, 4, 'testurl3');
-
-
+insert into photos(users_id, photos_url)
+values(4, 'testurl3');
 
 select (users.name, photos.photos_url) from users 
 join photos on (users.id = photos.users_id);
-
 
 select * from users;
 

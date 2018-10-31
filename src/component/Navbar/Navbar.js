@@ -8,9 +8,8 @@ import axios from 'axios'
 
 class Nav extends Component{
     componentDidMount(){
-        axios.get('/api/getLoggedInUser').then(response => {
+        axios.get('/api/getLoggedInUser', {}).then(response => {
             this.props.logIn(response.data)
-            console.log(response.data)
         })
     }
     state = {

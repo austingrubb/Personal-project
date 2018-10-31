@@ -3,128 +3,69 @@ import axios from 'axios';
 import {logIn} from '../../ducks/reducer'
 import {logOut} from '../../ducks/reducer'
 import { connect } from 'react-redux';
+import MainContent from './MainContent'
 
 class Login extends Component {
-    state = {
-      showRegister: false,
-      message: null,
-      user: this.props.user,
-      admin: false
-      
-    };
-  
-    getMessage = error => error.response
-    ? error.response.data
-       ? error.response.data.message
-       : JSON.stringify(error.response.data, null, 2)
-    : error.message; 
-  
-    signup = () => {
-      this.setState({message: null})
-      const username = this.refs.username.value;
-      const password = this.refs.password.value;
-      const email = this.refs.email.value;
-      axios.post('/signup' , {
-        username,
-        password,
-        email
-      }).then(response => {
-        this.props.logIn(response.data)
-        this.setState({users: response.data}, this.props.history.push('/Profile'))
-      }).catch(error => {
-        this.setState({ message: 'Something went wrong: ' + this.getMessage(error) });
-      }); 
-    }
-  
-    login = () => {
-      this.setState({message: null})
-      const username = this.refs.username.value;
-      const password = this.refs.password.value;
-      axios.post('/login', {
-        username,
-        password
-      }).then(response => {
-        this.props.logIn(response.data)
-        this.setState({users: response.data}, this.props.history.push('/Profile'))
-      }).catch(error => {
-        this.setState({ message: 'Something went wrong: ' + this.getMessage(error) });
-      });
-    }
-    // hello
-  
-    logout = () => {
-      axios.post('/logout').then(response => {
-        this.props.logOut(response.data)
-      }).catch(error => {
-        this.setState({ message: 'Something went wrong: ' + this.getMessage(error) });
-      });
-    };
+  state = {
+    username: "test1",
+    password: "test1",
+    email: "test1",
+    admin: false,
+    user: this.props.user,
+  }
 
-    componentDidUpdate = (prevProps, prevState) => {
-      console.log('previous user props', prevProps.user)
-      this.props.user !== prevProps.user && this.setState({user: this.props.user})
+
+  
+  login = () => {
+    axios.post('/login',{username: this.state.username, password: this.state.password}).then( res => {
+      this.props.logIn(res.data)}
+    ).catch(error => {
+      console.log('error', error);
+    })
+    // console.log(this.state)
+  }
+  logOut = () => {
+    axios.post('/logout' ).then (res => {
+      this.props.logOut(res.data)
+      this.setState({
+        username: "",
+        password: ""
+          })
+        }
+      )
     }
-    
-    // id ,name ,email
+
     render() {
-      // const { users} = this.state.user;
+      // console.log(this.state)
       const {user} =this.props
-      console.log('current logged in user', this.state.user)
-      const { showRegister, message} = this.state;
-      const userData = JSON.stringify( this.props)
-      const signUpInputFields = <div>
-        Username: <input ref="username" />
-        {' '}
-        Password: <input type="password" ref="password" />
-        {' '}
-        Email: <input type="email" ref="email" />
-        {' '}
-        </div>
-      const loginInputFields = <div>
-        Username: <input ref="username" />
-        {' '}
-        Password: <input type="password" ref="password" />
-        {' '}
-        </div>
+      console.log('current logged in user', user)
       return (
-        <div className="App">
-        <div className="App-intro">
-          {!user ? 
-           <nav className="navBar">
-            <div> 
-              <div className="login_signuplink">
-                  <a href="javascript:void(0)" onClick={() => this.setState({ showRegister: false })}>Login</a>
-                  {' '}
-                  <a href="javascript:void(0)" onClick={() => this.setState({ showRegister: true })}>signup</a>
-              </div>
-              <div className="login-or-register">
-                {showRegister && <div>
-                  <h2>sign up</h2>
-                  {signUpInputFields}
-                  <button onClick={this.signup}>sign up</button>
-                </div>}
-                {!showRegister && <div>
-                  <h2>Log in</h2>
-                  {loginInputFields}
-                  <button onClick={this.login}>Log in</button>
-                </div>}
-                {message}
-              </div>
-            </div>
-           </nav>
-           :
-              <div className='  user-info'>
-                <h2>user Data:</h2>
-                <div>{ userData }</div>
-                <button onClick={this.logout}>Log out</button>
+        <div>
+          <div className="login-introProfile">
+            {!user ?
+
+              <div className="inputBoxs">
+            <h1>Login</h1>
+                Username:
+            <input type='text' name ='username' onChange = {(e) => this.setState({username: e.target.value})}value = {this.state.username}/>
+                Password:
+            <input type='text' password ='password' onChange = {(e) => this.setState({password: e.target.value})}value = {this.state.password}/>
+          <button onClick={this.login}>Login</button>
+          </div>
+          :
+          <div className='  user-info'>
+                <h2>Name:</h2>
+                <div>{user ? 
+                    <MainContent user={user} />
+                  : 'please login'}</div>
+                <button onClick={this.logOut}>logout</button>
               </div>
             } 
           </div>
         </div>
-      );
-    }
+      )
   }
-
+}
   const mapStateToProps = (store) => {
     return{
       user: store.users

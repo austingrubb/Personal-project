@@ -32,7 +32,7 @@ module.exports = {
     getUsersPhotos: (req, res) => {
         const database = req.app.get('db'); 
  
-        database.get_users_photos()
+        database.get_users_photos(req.session.users.id)
         .then( (response) => res.status(200).send(response))
         .catch( err => {
           res.status(500).send({errorMessage: "Oops! Something went wrong. Our engineers have been informed!"});

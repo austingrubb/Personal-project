@@ -1,0 +1,90 @@
+.usersList{
+    // background: blue;
+    padding: 10px;
+}
+
+.selectedUser{
+    background:rgb(245, 245, 245);
+    font-size: 30px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+
+}
+
+.usersName{
+    background:darkcyan;
+    font-size: 30px;
+    display: flex;
+    justify-content: flex-start;
+    // padding-left: 30px;
+    margin: 10px;
+    // width: calc(100vw - 140px);
+    // height: calc(100% - 135px);
+    border: 2px solid lightgray;
+    padding: 15px;
+    
+}
+
+input[type=text], select, textarea {
+    width: 100%; 
+    max-width: 520px;
+    padding: 10px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 5px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+.login-introAdmin{
+    background: rgb(245, 245, 245);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100%;
+    width: 60%;
+    padding: 10px;
+    margin: 0 auto;
+    h1{
+        font-size: 30px;
+    }
+    button{
+        justify-content: center;
+        align-content: center;
+        background-color: rgb(76, 172, 175);
+        color: white;
+        width: 10%;
+        padding: 10px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        min-width: 20px; 
+        
+    }
+}
+
+.adminInfo{
+    background:rgb(245, 245, 245);
+}
+
+.Admin{
+    background:rgb(245, 245, 245);
+}
+
+.upload{
+    background:rgb(245, 245, 245);
+}
+
+.adminSignUp{
+    background:rgb(245, 245, 245);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h1{
+        font-size: 30px;
+    }
+}
