@@ -9,9 +9,14 @@ const photoSet = [
       height: 4
     },
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543517319/DSC_0760.jpg',
-      width: 6,
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543514328/DSC_0005-2.jpg',
+      width: 3,
       height: 4
+    },
+    {
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543515333/DSC_1385.jpg',
+      width: 6,
+      height: 9
     },
     {
       src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543517083/DSC_1214.jpg',
@@ -24,17 +29,17 @@ const photoSet = [
       height: 6
     },
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543515651/DSC_1569.jpg',
-      width: 10,
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543515163/DSC_1976.jpg',
+      width: 9,
       height: 12
     },
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543516878/DSC_1163.jpg',
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543515496/DSC_1480.jpg',
       width: 10,
-      height: 6
+      height: 14
     },
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543516710/DSC_1109.jpg',
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543515742/DSC_1727.jpg',
       width: 5,
       height: 3
     },
@@ -44,32 +49,47 @@ const photoSet = [
       height: 3
     },
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543516487/DSC_1012.jpg',
-      width: 5,
-      height: 3
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543515692/DSC_1642.jpg',
+      width: 6,
+      height: 4
     },
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543515570/DSC_1532.jpg',
-      width: 10,
-      height: 9
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543516292/DSC_0961.jpg',
+      width: 8,
+      height: 10
     },
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543515675/DSC_1609.jpg',
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543515385/DSC_1389.jpg',
       width: 6,
       height: 8
     },
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543515128/DSC_1966.jpg',
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543514827/DSC_1850.jpg',
+      width: 8,
+      height: 10
+    },
+    {
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543516481/DSC_1004.jpg',
       width: 5,
       height: 3
     },
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543514995/DSC_1919.jpg',
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543516546/DSC_1049.jpg',
+      width: 5,
+      height: 4
+    },
+    {
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543515763/DSC_1718.jpg',
       width: 5,
       height: 3
     },
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543514445/DSC_0066.jpg',
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543517439/DSC_0798.jpg',
+      width: 5,
+      height: 3
+    },
+    {
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543516312/DSC_0923.jpg',
       width: 5,
       height: 3
     }

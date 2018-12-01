@@ -10,16 +10,16 @@ class Home extends Component {
                 <div className = "home">
                     <Carousel showThumbs={false} centerMode={true} autoPlay={true} infiniteLoop={true} centerSlidePercentage={100} className='carousel' swipeable={true} width='99%'>
                         <div className = "honey" >
-                        <img src='https://res.cloudinary.com/alexishandphotography/image/upload/v1543515524/DSC_1490.jpg' />
+                        <img src='https://res.cloudinary.com/alexishandphotography/image/upload/v1543515524/DSC_1489.jpg' />
                         </div>
                         <div className = "peir">
-                        <img src= 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543515524/DSC_1489.jpg' />
+                        <img src= 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543516706/DSC_1096.jpg' />
                         </div>
                         <div className = "trees">
                         <img src='https://res.cloudinary.com/alexishandphotography/image/upload/v1543514762/DSC_1830.jpg' />
                         </div>
                         <div className = "houseTrees">
-                        <img src='https://res.cloudinary.com/alexishandphotography/image/upload/v1543517527/DSC_0807.jpg' />
+                        <img src='https://res.cloudinary.com/alexishandphotography/image/upload/v1543517439/DSC_0798.jpg' />
                         </div>
                     </Carousel>
                     <div className="mobileView">
