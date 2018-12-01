@@ -153,6 +153,7 @@ app.post('/api/addUsers', uC.createUser)
 app.post('/api/addPhotos', uC.addPhotos)
 app.delete('/api/deleteUser/:id', uC.deleteUser)
 app.delete('/api/deletePhotos/:id', uC.deletePhotos)
+app.post('/api/submitImages', uC.submitImages)
 
 
 const PORT = 4800;

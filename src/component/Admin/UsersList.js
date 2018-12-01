@@ -32,21 +32,22 @@ export class UsersList extends Component {
     }
     
     
-    getId = (id) => {
+    getId = (id, name) => {
         this.setState({
-            id: id
+            id: id,
+            name: name
         })
     }
   render() {
-      console.log(this.props)
+      console.log(this.props.id)
     return (
       <div className='usersList'>
         <div className='selectedUser'>
-            <p>selected user {this.state.id}</p>
+            <p>selected user {this.props.name}</p>
         </div>
         <div>
             {this.state.users.map(users => {
-                return <div className="usersName" onClick={() => this.getId(users.name)}>
+                return <div className="usersName" onClick={() => this.props.getId(users.id, users.name)}>
                             <p>{users.name}</p>
                         </div>
             })}

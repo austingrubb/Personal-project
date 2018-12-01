@@ -4,72 +4,72 @@ import Gallery from 'react-photo-gallery';
 
 const photoSet = [
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539801321/high-quality-tiger-images.jpg',
-      width: 5,
-      height: 3
-    },
-    {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539801321/Tigers_Snow_Cute_544989_1920x1200.jpg',
-      width: 5,
-      height: 3
-    },
-    {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539801321/maxresdefault.jpg',
-      width: 5,
-      height: 3
-    },
-    {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539801322/Free-places-to-download-stock-photos-1600x806.jpg',
-      width: 6,
-      height: 3
-    },
-    {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539801322/Wallpaper-free-desktop-wallpapers-high-quality-hd-wallpaper-high.jpg',
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543517216/DSC_0749-2.jpg',
       width: 6,
       height: 4
     },
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539801323/high-quality-free-pictures-hd-wallpaper.jpg',
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543517319/DSC_0760.jpg',
       width: 6,
-      height: 3
+      height: 4
     },
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539801324/wallpaper2you_193668.jpg',
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543517083/DSC_1214.jpg',
+      width: 6,
+      height: 9
+    },
+    {
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543516941/DSC_1177.jpg',
+      width: 10,
+      height: 6
+    },
+    {
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543515651/DSC_1569.jpg',
+      width: 10,
+      height: 12
+    },
+    {
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543516878/DSC_1163.jpg',
+      width: 10,
+      height: 6
+    },
+    {
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543516710/DSC_1109.jpg',
       width: 5,
       height: 3
     },
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539801631/High-Quality-Computer-Wallpapers.jpg',
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543516539/DSC_1035.jpg',
       width: 5,
       height: 3
     },
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539801632/3844570-high-quality-images.jpg',
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543516487/DSC_1012.jpg',
       width: 5,
       height: 3
     },
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539800900/f4ed76093299eb5308e777358ed18a32.jpg',
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543515570/DSC_1532.jpg',
+      width: 10,
+      height: 9
+    },
+    {
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543515675/DSC_1609.jpg',
+      width: 6,
+      height: 8
+    },
+    {
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543515128/DSC_1966.jpg',
       width: 5,
       height: 3
     },
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539800894/6338997-high-quality-images.jpg',
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543514995/DSC_1919.jpg',
       width: 5,
       height: 3
     },
     {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539800894/6353726-high-quality-wallpaper.jpg',
-      width: 5,
-      height: 3
-    },
-    {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539801106/wallpaper.wiki-Beautiful-hd-high-quality-nature-widescreen-desktop-backgrounds-PIC-WPD0011994.jpg',
-      width: 5,
-      height: 3
-    },
-    {
-      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1539801106/tiger-high-quality-wallpapers.jpg',
+      src: 'https://res.cloudinary.com/alexishandphotography/image/upload/v1543514445/DSC_0066.jpg',
       width: 5,
       height: 3
     }

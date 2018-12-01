@@ -11,7 +11,7 @@ class Login extends Component {
     password: "test1",
     email: "test1",
     admin: false,
-    user: this.props.user,
+    user: this.props.user, 
   }
 
 
@@ -24,6 +24,7 @@ class Login extends Component {
     })
     // console.log(this.state)
   }
+
   logOut = () => {
     axios.post('/logout' ).then (res => {
       this.props.logOut(res.data)

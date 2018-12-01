@@ -203,9 +203,7 @@ button[type=submit]:hover {
   max-width: 500px; }
 
 .home {
-  max-height: 780px;
-  min-height: 600px;
-  overflow-y: scroll;
+  max-height: 80%;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
@@ -234,7 +232,7 @@ button[type=submit]:hover {
   top: 20px;
   left: 0;
   right: 0;
-  background: white;
+  background: whitesmoke;
   z-index: 2; }
 
 .navBar-container {

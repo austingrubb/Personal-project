@@ -56,20 +56,42 @@ export class Admin extends Component {
         }
 
     uploadWidget = () => {
+
+        let imagesArray = []
         window.cloudinary.openUploadWidget(
      { cloud_name: 'alexishandphotography', upload_preset: 'main_up', folder: 'main', tags: ['TAG'] },
           (error, result) => {
             if (result.info.secure_url) {
-              let myGallery = [...this.state.gallery].concat(result.info.secure_url)
-              this.setState({ gallery: myGallery })
+                imagesArray.push(result.info.secure_url);
             }
          })
+         this.setState({ userImages:{ id: this.state.id, gallery:imagesArray }})  
      }
-     
+
+     getId = (id, name) => {
+        this.setState({
+            id: id,
+            name: name
+        })
+    }
+
+     submitImages = () => {
+        
+        axios.post('/api/submitImages', this.state.userImages).then( res => {
+            console.log(this.state.userImages)
+            this.setState({
+                message: 'success!'
+            })
+        }).catch(error => {
+            console.log('error', error);
+          })
+     }
+
+
     render(){  
         const {user} =this.props
         const admin = this.props.user.admin
-        console.log(admin)
+        console.log(this.state.userImages)
         return(
             <div className="Admin">
               {!admin ?
@@ -89,6 +111,10 @@ export class Admin extends Component {
                             <button type="submit" onClick={this.uploadWidget} className="upload-button">
                             Add Images
                             </button>
+                            <button type="submit" onClick={this.submitImages} className="userImages">
+                            Submit Images
+                            </button>
+                        {this.state.message}
                         <div className="adminSignUp">
                             <h1>SIGNUP</h1>
                                 name:
@@ -100,7 +126,7 @@ export class Admin extends Component {
                                 <button type="submit" onClick={this.signup}>signUp</button>
                         </div>
                         <div>
-                            <UsersList users={this.state.users}/>
+                            <UsersList name={this.state.name} id={this.state.id} getId={this.getId} users={this.state.users}/>
                         </div>
                     </div>
               :

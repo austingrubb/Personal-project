@@ -37,7 +37,8 @@ export class MainContent extends Component {
             height: 3
         }
     })
-
+    console.log(photos)
+    
     return (
         <div>
         <div>
