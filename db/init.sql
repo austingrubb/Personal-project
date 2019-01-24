@@ -42,6 +42,7 @@ insert into photos(users_id, photos_url)
 values(3, 'testurl2');
 
 insert into photos(users_id, photos_url)
+
 values(4, 'testurl3');
 
 select (users.name, photos.photos_url) from users 

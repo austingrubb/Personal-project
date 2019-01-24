@@ -49,8 +49,8 @@ class Nav extends Component{
                         <NavLink to="/About">
                             About
                         </NavLink>
-                        <NavLink to="/Profile">
-                            Profile
+                        <NavLink to="/Blog">
+                            Blog
                         </NavLink>
                         <NavLink to="/Contact">
                             Contact

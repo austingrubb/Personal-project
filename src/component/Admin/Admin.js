@@ -89,7 +89,7 @@ export class Admin extends Component {
 
 
     render(){  
-        const {user} =this.props
+        const {user} = this.props
         const admin = this.props.user.admin
         console.log(this.state.userImages)
         return(
@@ -148,66 +148,3 @@ export class Admin extends Component {
   }
   
   export default connect(mapStateToProps,{logIn, logOut})(Admin);
-
-// import React, {Component} from 'react';
-// import UsersList from '../Admin/UsersList'
-
-// class Admin extends Component {
-//     constructor(){
-//         super();
-//         this.state = {  
-//             gallery: [],
-//             toggle: false
-//         }
-//     }
-
-//     uploadWidget = () => {
-//         window.cloudinary.openUploadWidget(
-//      { cloud_name: 'alexishandphotography', upload_preset: 'main_up', folder: 'main', tags: ['TAG'] },
-//           (error, result) => {
-//             if (result.info.secure_url) {
-//               let myGallery = [...this.state.gallery].concat(result.info.secure_url)
-//               console.log(myGallery);
-     
-//               this.setState({ gallery: myGallery })
-//             }
-//          })
-//      }
-
-//      toggleFunc = () => {
-//          this.setState((prevState) => {
-//              return {
-//                  toggle: !prevState.toggle
-//              }
-//          })
-//      }
-     
-//     render(){
-//         const style1 = {
-//             position:"absolute",
-//             left: "40px"
-//         }
-
-//         const style2 = {
-//             position:"absolute",
-//             left: "140px"
-//         }
-
-//         return(
-//             <div>
-//                 you are on the Admin page
-//                 <div className="upload">
-//                     <button style={this.state.toggle ? style1 : style2} onMouseEnter={this.toggleFunc} className="upload-button">
-//                          Add Images
-//                     </button>
-//                 <div>
-//                 <UsersList/>
-//                 </div>
-//                 </div>
-                
-//             </div>
-//         )
-//     }
-// }
-
-// export default Admin;

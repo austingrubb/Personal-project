@@ -6,10 +6,10 @@ class Contact extends Component {
     constructor(){
         super()
         this.state = {
-            name: 'austin grubb',
-            email: 'austin.grubb@gmail.com',
-            moment: 'anaversary photos',
-            hearAbout: 'found you on face book'
+            name: '',
+            email: '',
+            moment: '',
+            hearAbout: ''
 
         }
         
@@ -63,7 +63,7 @@ class Contact extends Component {
                     </div>
                     <div className = "inputContainer" >
                         <label for = "reason">How did You Hear About Me?</label>
-                        <input type = "text" value={this.state.hearAbout} onChange={e => this.handleChange('hearAbout', e.target.value)} placeholder = "What moment would you like me to capture?"/>
+                        <input type = "text" value={this.state.hearAbout} onChange={e => this.handleChange('hearAbout', e.target.value)} placeholder = "Facebook, Instagram ect"/>
                     </div>
                     <button className = "submit" type="submit" value="Submit" onClick={(e) => this.handleSubmit(e)}>Submit</button>
                 </div>
